@@ -1,5 +1,5 @@
-mod hero;
-pub use hero::Hero;
+mod navigation;
+pub use navigation::Navigation;
 
-mod navbar;
-pub use navbar::Navbar;
+mod book;
+pub use book::Book;

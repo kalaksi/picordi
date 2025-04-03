@@ -1,0 +1,34 @@
+#navigation {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+
+    background-color: #31a4d2;
+    height: 70%;
+    /* Narrow by default */
+    width: 2rem;
+    padding: 1rem;
+    padding-left: 0rem;
+    /* Centered vertically */
+    margin-top: 5%;
+}
+
+/* Expand on hover */
+#navigation:hover {
+    width: 10rem;
+    padding-left: 1rem;
+    padding-right: 2rem;
+    transition: width 0.2s ease;
+    transition: padding-left 0.1s ease;
+}
+
+#navigation a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+#navigation a:hover {
+    cursor: pointer;
+    color: #91a4d2;
+}
