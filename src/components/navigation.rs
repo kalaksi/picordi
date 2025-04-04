@@ -1,10 +1,12 @@
 use crate::Route;
-use dioxus::{prelude::*, router::navigation};
+use dioxus::{html::g::to, prelude::*, router::navigation};
 
 
 #[component]
 pub fn Navigation() -> Element {
+
     rsx! {
+
         document::Link { rel: "stylesheet", href: asset!("/assets/styling/navigation.css")}
 
         div {
@@ -18,27 +20,6 @@ pub fn Navigation() -> Element {
             //     to: Route::Blog { id: 1 },
             //     "Blog"
             // }
-        }
-
-        div {
-            id: "bottom-navigation",
-
-            button {
-                onclick: |_| {
-                },
-                "Back"
-            }
-
-            div {
-                id: "page-number",
-                "Page 1"
-            }
-
-            button {
-                onclick: |_| {
-                },
-                "Next"
-            }
         }
 
         Outlet::<Route> {}

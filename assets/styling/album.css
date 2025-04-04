@@ -1,0 +1,75 @@
+#album-background {
+    background-color: #aaaaaa;
+    height: 100%;
+    width: 100%;
+    padding: 2%;
+    box-sizing: border-box;
+}
+
+#album {
+    position: relative;
+    background-color: #bbbbbb;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    margin: 0;
+    box-sizing: border-box;
+    box-shadow: 0 0 50px #00000020;
+    perspective: 90vw;
+}
+
+#page-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.page {
+    position: absolute;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    border: 1px solid #00000035;
+    height: 100%;
+    width: 50%;
+    left: 50%;
+    padding: 1rem;
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.65, 0.05, 0.4, 1);
+    transform-origin: 0% 0%;
+    background-image: linear-gradient(90deg, #00000020 0%, #00000000 10%);
+}
+
+/* .page:nth-of-type(1) {
+    background-image: linear-gradient(-90deg, #00000020 0%, #00000000 10%);
+} */
+
+.flipped {
+    transform: rotateY(180deg);
+}
+
+.page-number {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+}
+
+#bottom-navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+
+    /* Centered horizontally */
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-color: #31a4d2;
+    height: 1.5rem;
+    width: 14rem;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.75rem;
+}

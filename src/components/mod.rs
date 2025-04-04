@@ -1,8 +1,8 @@
 mod navigation;
 pub use navigation::Navigation;
 
-mod book;
-pub use book::Book;
+mod album;
+pub use album::Album;
 
 mod page;
 pub use page::Page;
