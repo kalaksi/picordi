@@ -1,0 +1,32 @@
+
+.icon-button {
+    width: 2rem;
+    height: 2rem;
+}
+
+.icon-button > svg {
+    width: 100%;
+    height: 100%;
+    fill: #000000;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.toolbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    background-color: #31a4d2;
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+}

@@ -1,11 +1,13 @@
 use dioxus::prelude::*;
+use dioxus_free_icons::icons::bs_icons::*;
+use dioxus_free_icons::Icon;
 
 #[component]
 pub fn Album() -> Element {
     // Number of the current page, starts from 1 and displays the highest visible page number.
     // So normally odd-numbers (right-side page) unless last page ends up being on left and even.
     let mut current_page = use_signal(|| 1);
-    let mut total_pages = use_signal(|| 10);
+    let mut total_pages = use_signal(|| 4);
     let mut left_page_classes = use_signal(|| "");
 
     let go_next = move |_event| {
@@ -30,24 +32,49 @@ pub fn Album() -> Element {
     };
 
     rsx! {
+        document::Link { rel: "stylesheet", href: asset!("/assets/styling/global.css")}
         document::Link { rel: "stylesheet", href: asset!("/assets/styling/album.css")}
 
         div {
-            id: "bottom-navigation",
+            id: "bottom-toolbar",
 
-            button {
-                onclick: go_prev,
-                "Back",
+            div {
+                id: "toolbar-tools",
+                class: "toolbar",
+
+                button {
+                    class: "icon-button",
+
+                    Icon {
+                        icon: BsPencilSquare,
+                    }
+                }
             }
 
             div {
-                id: "page-number",
-                "Page {current_page} of {total_pages}"
-            }
+                id: "toolbar-navigation",
+                class: "toolbar",
 
-            button {
-                onclick: go_next,
-                "Next"
+                button {
+                    class: "icon-button",
+                    onclick: go_prev,
+
+                    Icon {
+                        icon: BsChevronLeft,
+                    }
+                }
+
+                div {
+                    "Page {current_page} of {total_pages}"
+                }
+
+                button {
+                    class: "icon-button",
+                    onclick: go_next,
+                    Icon {
+                        icon: BsChevronRight,
+                    }
+                }
             }
         }
 
